@@ -1,0 +1,375 @@
+/* ==================================== */
+/* 0. ESTILS BASE I RESET */
+/* ==================================== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Utilitzem box-sizing per facilitar la maquetació (bona pràctica) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Contenidor principal per agrupar el contingut al centre */
+.contenidor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estil per a tots els títols de secció (h2) per optimitzar l'estil */
+.titol-seccio {
+    color: #4B0082; /* Indi: Color Místic */
+    border-bottom: 2px solid #4B0082;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Estil per als elements de llista sense les boles típiques */
+.llista-sense-estil {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* ==================================== */
+/* 1. BARRA DE NAVEGACIÓ (HEADER) */
+/* ==================================== */
+
+/* Estil per la capçalera principal (transversal a totes les pàgines) */
+.capcalera-web {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+    /* Utilitzem un z-index alt si fos 'position: fixed' */
+}
+
+.menu-navegacio ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-navegacio a {
+    color: #00FFFF; /* Cyan: Recorda als escuts d'energia */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s; /* Bona pràctica: transicions suaus */
+}
+
+.menu-navegacio a:hover,
+.menu-navegacio a:focus { /* Focus per accessibilitat */
+    background-color: #4B0082;
+    color: white;
+}
+
+
+/* ==================================== */
+/* 2. ESTILS PÀGINA PRINCIPAL (INDEX.HTML) */
+/* ==================================== */
+
+/* Contenidor principal per a la secció de la capçalera (Hero Section) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Separació entre la imatge i el text */
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.hero-text {
+    flex-grow: 1;
+    padding-right: 40px;
+}
+
+.hero-image {
+    width: 300px;
+    min-width: 200px; /* Bona pràctica: mida mínima per evitar que es faci massa petit */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #CCAA00;
+}
+
+
+/* ==================================== */
+/* 3. ESTILS CV (CV.HTML) */
+/* ==================================== */
+
+.destacat-laboral {
+    font-style: italic;
+    font-weight: bold;
+    color: #CCAA00;
+}
+
+.taula-cv {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.taula-cv th, .taula-cv td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.taula-cv th {
+    background-color: #eee;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* ==================================== */
+/* 4. ESTILS DEL FORMULARI (CONTACTE.HTML) */
+/* ==================================== */
+
+.formulari-contacte {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efecte d'ombra suau */
+}
+
+.grup-camp {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grup-camp label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4B0082; /* Color distintiu per als labels */
+}
+
+.grup-camp input[type="text"],
+.grup-camp input[type="email"],
+.grup-camp textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grup-checkbox {
+    flex-direction: row;
+    align-items: center;
+}
+
+.grup-checkbox label {
+    font-weight: normal;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.boto-primari {
+    background-color: #CCAA00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block; /* Ocupa tota l'amplada per a millor ús en mòbil */
+    width: 100%;
+    max-width: 300px; /* Límitem l'amplada en escriptori */
+}
+
+.boto-primari:hover,
+.boto-primari:focus {
+    background-color: #4B0082;
+    color: white;
+}
+
+
+/* ==================================== */
+/* 5. PEU DE PÀGINA (FOOTER) */
+/* ==================================== */
+
+.peu-de-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px; /* Separem el footer del contingut */
+}
+
+
+/* ==================================== */
+/* 6. RESPONSIVE DESIGN (MEDIA QUERIES) */
+/* ==================================== */
+
+/* Dispositius Petits (Mòbil: max-width: 600px) */
+@media (max-width: 600px) {
+
+    .contenidor-principal {
+        padding: 10px;
+    }
+    
+    /* Menú de navegació */
+    .menu-navegacio ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-navegacio a {
+        padding: 8px 5px;
+        border-bottom: 1px solid #4B0082;
+    }
+
+    /* Pàgina Principal (Hero Section) */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 10px;
+        gap: 20px;
+    }
+
+    .hero-image {
+        order: -1;
+        width: 180px;
+        height: 180px;
+        margin-bottom: 10px;
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    /* CV - Taula responsive */
+    .taula-cv, .taula-cv thead, .taula-cv tbody, .taula-cv th, .taula-cv td, .taula-cv tr {
+        display: block;
+        width: 100%;
+    }
+    
+    .taula-cv thead {
+        display: none; /* Amaguem l'encapçalament original de la taula */
+    }
+    
+    .taula-cv tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+    }
+    
+    .taula-cv td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    
+    .taula-cv td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Formulari */
+    .boto-primari {
+        width: 100%;
+        max-width: none;
+    }
+}
+/* ==================================== */
+/* 7. ESTILS DE LA FINESTRA FLOTANT (TOOLTIP AJUSTAT) */
+/* ==================================== */
+
+/* Contenidor de l'enllaç i la política. Es manté per la lògica :hover */
+.politica-container {
+    position: relative;
+    display: inline-block;
+}
+
+.enllac-politica {
+    color: #4B0082;
+    text-decoration: underline;
+    cursor: help;
+}
+
+/* 1. ESTIL I POSICIONAMENT DEL TOOLTIP */
+.politica-tooltip {
+    visibility: hidden;
+    opacity: 0; 
+    
+    width: 80vw; /* Ocupa el 80% de l'amplada de la vista (Wider Tooltip) */
+    max-width: 600px; /* Amplada màxima per evitar que sigui massa gran en escriptori */
+    
+    max-height: 80vh; /* Alçada màxima del 80% de la vista */
+    overflow-y: auto; /* Habilitem el scroll vertical si el contingut és llarg */
+
+    background-color: #2c0050;
+    color: white;
+    text-align: left;
+    padding: 20px; /* Augmentem el padding */
+    border-radius: 6px;
+    border: 3px solid #CCAA00;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Ombra més marcada */
+    
+    position: fixed; /* Fixem la posició a la finestra, ignorant el scroll */
+    z-index: 1000; /* Assegurem que es vegi per sobre de tot */
+    
+    /* Centrem a la pantalla (Verticalment i Horitzontalment) */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrat perfecte */
+    
+    transition: opacity 0.5s;
+}
+
+.politica-tooltip p {
+    font-size: 1em; /* Mida de font més llegible */
+    margin: 10px 0;
+}
+
+.politica-tooltip hr {
+    border-color: #CCAA00;
+}
+
+.politica-tooltip .tanca-tooltip {
+    text-align: right;
+    font-style: italic;
+    color: #00FFFF;
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+
+/* Lògica de VISIBILITAT: Mantenim el :hover, però ara el mostra al centre */
+.politica-container:hover .politica-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 2. ELIMINACIÓ DE LA FLETXA */
+/* Eliminem la fletxa, ja que el tooltip fixat al centre ja no la necessita */
+.politica-tooltip::after {
+    content: none;
+}
+
+
+/* 3. RESPONSIVE: Mòbils (max-width: 600px) */
+@media (max-width: 600px) {
+    /* No cal canviar la posició (ja és fixed i centrat), només assegurar l'amplada */
+    .politica-tooltip {
+        width: 95vw; /* Ocupa el 95% de l'amplada de la vista en mòbils */
+        max-width: none;
+        padding: 15px;
+    }
+}
