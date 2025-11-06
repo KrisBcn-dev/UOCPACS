@@ -38,37 +38,58 @@ body {
 
 
 /* ==================================== */
-/* 1. BARRA DE NAVEGACIÓ (HEADER) */
+/* 1. BARRA DE NAVEGACIÓ (HEADER) - AMB GRADIENT MÍSTIC (Sense Imatge Externa) */
 /* ==================================== */
 
-/* Estil per la capçalera principal (transversal a totes les pàgines) */
 .capcalera-web {
-    background-color: #000000;
+    /* 1. Fons místic utilitzant un gradient radial CSS */
+    background: radial-gradient(circle at top left, #4B0082 0%, #000000 60%); /* Indi a Negre */
+    background-color: #000000; /* Color de fallback */
+    
     color: white;
-    padding: 10px 0;
-    /* Utilitzem un z-index alt si fos 'position: fixed' */
+    padding: 15px 0;
+    min-height: 120px;
+    
+    position: relative;
+    z-index: 1;
 }
 
+/* Títol principal dins de la capçalera */
+.capcalera-web h1 {
+    color: #00FFFF; /* Blau elèctric que contrasta amb el fons fosc */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(75, 0, 130, 0.5); /* Efecte "brillantor" màgica */
+    margin-top: 0;
+}
+
+/* El pseudo-element Overlay (::before) de l'anterior versió ja NO és necessari */
+.capcalera-web::before {
+    /* Eliminem l'overlay, ja que el gradient ja ens dóna el contrast */
+    content: none;
+}
+/* Contenidor de la llista: ha d'estar sempre en línia per defecte */
 .menu-navegacio ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: space-around;
+    display: flex; /* <--- Aquesta és la clau: Flexbox en línia per defecte */
+    justify-content: space-around; /* Reparteix l'espai entre els ítems */
+    flex-direction: row; /* <--- Explicitament a 'row' per claredat */
 }
 
+
+/* El menú es manté igual */
 .menu-navegacio a {
-    color: #00FFFF; /* Cyan: Recorda als escuts d'energia */
+    color: #CCAA00; /* Or de l'Ull d'Agamotto per als enllaços */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
     display: block;
-    transition: color 0.3s, background-color 0.3s; /* Bona pràctica: transicions suaus */
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .menu-navegacio a:hover,
-.menu-navegacio a:focus { /* Focus per accessibilitat */
-    background-color: #4B0082;
+.menu-navegacio a:focus {
+    background-color: #4B0082; /* Indi */
     color: white;
 }
 

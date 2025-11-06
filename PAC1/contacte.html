@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacte - Dr. Stephen Strange</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
     <header class="capcalera-web">
         <div class="contenidor-principal">
             <h1>Dr. Strange's Portfolio</h1>
@@ -20,36 +19,27 @@
             </nav>
         </div>
     </header>
-
     <main class="contenidor-principal">
-
         <h2 class="titol-seccio">Contacta amb el Sorcerer Suprem</h2>
         <p>Si la vostra consulta és terrenal, utilitzeu el formulari. Si és d'àmbit interdimensional, si us plau, utilitzeu un portal adequat. Per a urgències, demaneu-li a Wong que m'avisi.</p>
-
         <form action="#" method="post" class="formulari-contacte" aria-label="Formulari de contacte">
-            
             <div class="grup-camp">
                 <label for="nom">Nom Complet:</label>
                 <input type="text" id="nom" name="nom" placeholder="Ex: Peter Parker / Baró Mordo" required>
             </div>
-            
             <div class="grup-camp">
                 <label for="email">Adreça de Correu Electrònic:</label>
                 <input type="email" id="email" name="email" placeholder="correu@dominimistic.com" required>
             </div>
-            
             <div class="grup-camp">
                 <label for="missatge">Missatge (Consulta o Amencaça Mística):</label>
                 <textarea id="missatge" name="missatge" rows="5" placeholder="Explica'm el problema amb claredat..." required></textarea>
             </div>
-            
             <div class="grup-camp grup-checkbox">
                 <input type="checkbox" id="dades" name="dades" required>
                 <label for="dades">Accepto el tractament de les meves dades i he llegit la 
-                    
                     <span class="politica-container">
                         <a href="#" class="enllac-politica" aria-describedby="politica-privacitat-content">Política de Privacitat</a>
-
                         <div class="politica-tooltip" id="politica-privacitat-content" role="tooltip">
                             <p><strong>Protocol de Confidencialitat Mística (PCM) del Dr. Strange</strong></p>
                             <hr>
@@ -62,21 +52,15 @@
                             <p class="tanca-tooltip">Tanca (o desapareix)</p>
                         </div>
                     </span>
-
                 .</label>
             </div>
-            
             <div class="grup-camp">
                 <button type="submit" class="boto-primari">Enviar Formulari</button>
             </div>
-
         </form>
-        
     </main>
-
     <footer class="peu-de-pagina">
         <p class="contenidor-principal">&copy; 2025 Dr. Stephen Strange. Per a qüestions urgents, utilitzeu un portal dimensional.</p>
     </footer>
-
 </body>
 </html>
