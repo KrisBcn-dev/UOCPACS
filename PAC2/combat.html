@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex | Combat Pokémon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Pokedex (Llistat)</a>
+            <a href="combat.html">Combat</a>
+        </nav>
+        <h1>Mode Combat</h1>
+    </header>
+    <main id="main-content">
+        <section id="combat-messages">
+            <p id="message">Selecciona la primera carta (Atacant) i després la segona (Defensora).</p>
+            <button id="restart-combat-btn" class="hidden">Torna a Combatre!</button>
+        </section>
+        <section id="combat-cards" class="pokemon-grid"></section>
+       <div id="icon-container" class="icon-container hidden">
+            <img src="assets/img/cmbtblue.png" class="rotating-icon" alt="Combat!">
+        </div>
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

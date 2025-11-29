@@ -1,0 +1,10 @@
+PAC3/assets/js/App.vue
+PAC3/assets/js/components/CombatCard.vue
+PAC3/assets/js/components/PokemonCard.vue
+PAC3/assets/js/components/ThemeSelector.vue
+PAC3/assets/js/router/index.js
+PAC3/assets/js/serveis/PokemonService.js
+PAC3/assets/js/vistes/CombatView.vue
+PAC3/assets/js/vistes/PokemonDetailView.vue
+PAC3/assets/js/vistes/PokemonListView.vue
+PAC2/assets/img/cmbtred.png

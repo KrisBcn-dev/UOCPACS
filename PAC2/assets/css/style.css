@@ -1,0 +1,239 @@
+/* ================================================================= */
+/* 1. ESTILS GENERALS (BODY, HEADER, NAV) */
+/* ================================================================= */
+html{
+  scroll-behavior: smooth;
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fons general de l'aplicació */
+}
+
+header {
+    background-color: #CC0000; /* Vermell Pokémon per a la capçalera */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    display: block;
+    margin: 0 15%; /* Centrat amb marges laterals */
+}
+
+/* Utilitat per amagar elements */
+.hidden {
+    display: none !important;
+}
+
+/* ================================================================= */
+/* 2. ESTILS DE LLISTAT I GRID */
+/* ================================================================= */
+.pokemon-grid {
+    display: flex;
+    /* flex-basis: 19%; (Aquesta regla s'hauria d'aplicar a les cartes individuals, no al contenidor) */
+    flex-wrap: wrap; /* Permet que les cartes saltin de línia */
+    gap: 20px; /* Espai entre les cartes */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ================================================================= */
+/* 3. ESTILS DEL FILTRE */
+/* ================================================================= */
+#filter-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#filter-section label{
+    font-weight: bold;
+}
+
+#pokemon-filter {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ================================================================= */
+/* 4. ESTILS DE TARGETA (CARD) */
+/* ================================================================= */
+.pokemon-card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Necessari per a la transformació 3D (Flip Card) */
+    border: 5px solid transparent; /* Vora transparent inicial */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, border 0.3s; /* Transició per efectes de selecció */
+}
+
+.pokemon-card img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Estil per a la carta seleccionada en combat */
+.pokemon-card.selected-combat {
+    border: 5px solid gold; /* Ressalta la carta seleccionada amb vora daurada */
+    transform: scale(1.05);
+}
+
+/* ================================================================= */
+/* 5. ESTILS DE BOTONS */
+/* ================================================================= */
+.detail-btn, #restart-combat-btn, #back-btn, #btn-rst-list {
+    display: block; /* Per defecte, els botons de detall/tornar ocupen tota l'amplada */
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #3B4CCA; /* Blau Pokémon */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+#restart-combat-btn, #btn-rst-list {
+    display: inline; /* Botons de reinici en línia */
+    margin: 10px 5px;
+}
+
+
+/* ================================================================= */
+/* 6. ESTILS PER L'EFECTE FLIP CARD (Girar Carta) */
+/* ================================================================= */
+
+.card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* Temps de l'animació de gir */
+    transform-style: preserve-3d; /* Permet la perspectiva 3D */
+}
+
+/* Estat inicial en combat: cartes girades (mostren el darrere) */
+.card-flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Amaga la cara posterior quan no és visible */
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-front {
+    background-color: white;
+    color: #333;
+    transform: rotateY(0deg); /* Posició inicial */
+}
+
+.card-front p{
+    margin: 5px 0;
+}
+
+.card-back {
+    background-color: #3B4CCA; /* Part posterior blava (oculta inicialment en combat) */
+    color: white;
+    font-size: 40px;
+    transform: rotateY(180deg); /* La part posterior comença girada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================================================================= */
+/* 7. ESTILS DE VISTA DETALLADA */
+/* ================================================================= */
+#pokemon-detail {
+    text-align: center;
+}
+
+.detailed-card {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailed-card img{
+    width: 65%;
+}
+
+/* ================================================================= */
+/* 8. ESTILS DE COMBAT I MISSATGES */
+/* ================================================================= */
+#combat-messages {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.rescombat{
+    border: 3px solid red;
+    border-radius: 20px;
+    padding: 13px 0;
+}
+
+/* ================================================================= */
+/* 9. ANIMACIÓ (OPCIONAL) */
+/* ================================================================= */
+
+/* Contenidor per centrar l'animació si s'utilitza un icona de combat */
+#icon-container{
+    position: absolute;
+    top: 44%;
+}
+.rotating-icon {
+    /* Mida de l'element d'animació */
+    width: 150px;
+    height: 150px;
+    /* Aplica l'animació 'spin' */
+    animation-name: spin;
+    animation-duration: 2s; /* Duració d'un cicle */
+    animation-iteration-count: infinite; /* Repetició infinita */
+    animation-timing-function: linear; /* Velocitat constant */
+    border: 6px solid gold;
+    border-radius: 112px;
+    padding: 10px;
+}
+
+/* Defineix els fotogrames clau de l'animació de rotació */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Inici */
+    }
+    to {
+        transform: rotate(360deg); /* Final (gir complet) */
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex | Llistat de Pokémon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Pokedex (Llistat)</a>
+            <a href="combat.html">Combat</a>
+        </nav>
+        <h1>Pokedex</h1>
+    </header>
+    <main id="main-content">
+        <section id="filter-section" class="visible">
+            <label for="pokemon-filter">Filtrar per nom:</label>
+            <input type="text" id="pokemon-filter" placeholder="Escriu un nom de Pokémon...">
+            <button type="button" id="btn-rst-list">Recarrega el llistat</button>
+        </section>
+        <section id="pokemon-list" class="pokemon-grid"></section>
+        <section id="pokemon-detail" class="hidden"></section>
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
