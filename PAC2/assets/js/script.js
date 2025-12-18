@@ -272,7 +272,7 @@ function startCombat() {
     // Mostra el botó per reiniciar el combat
     restartBtn.classList.remove('hidden');
 
-    // Mou la vista al top quan acaba el comat per a veure el missatge i el botó de reset
+    // Mou la vista al top quan acaba el combat per a veure el missatge i el botó de reset
     window.scrollTo(0,0);
 }
 
